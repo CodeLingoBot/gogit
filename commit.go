@@ -33,17 +33,17 @@ type Commit struct {
 	repository    *Repository
 }
 
-// Return the commit message. Same as retrieving CommitMessage directly.
+// Message returns the commit message. Same as retrieving CommitMessage directly.
 func (ci *Commit) Message() string {
 	return ci.CommitMessage
 }
 
-// Get the id of the commit.
+// Id gets the id of the commit.
 func (ci *Commit) Id() *Oid {
 	return ci.Oid
 }
 
-// Return parent number n (0-based index)
+// Parent returns parent number n (0-based index)
 func (ci *Commit) Parent(n int) *Commit {
 	if n >= len(ci.parents) {
 		return nil
@@ -56,7 +56,7 @@ func (ci *Commit) Parent(n int) *Commit {
 	return parent
 }
 
-// Return oid of the parent number n (0-based index). Return nil if no such parent exists.
+// ParentId returns oid of the parent number n (0-based index). Return nil if no such parent exists.
 func (ci *Commit) ParentId(n int) *Oid {
 	if n >= len(ci.parents) {
 		return nil
@@ -64,13 +64,13 @@ func (ci *Commit) ParentId(n int) *Oid {
 	return ci.parents[n]
 }
 
-// Return the number of parents of the commit. 0 if this is the
+// ParentCount returns the number of parents of the commit. 0 if this is the
 // root commit, otherwise 1,2,...
 func (ci *Commit) ParentCount() int {
 	return len(ci.parents)
 }
 
-// Return oid of the (root) tree of this commit.
+// TreeId returns oid of the (root) tree of this commit.
 func (ci *Commit) TreeId() *Oid {
 	return ci.treeId
 }

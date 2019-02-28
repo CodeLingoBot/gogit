@@ -105,7 +105,7 @@ func (t *Tree) EntryByName(name string) *TreeEntry {
 	return nil
 }
 
-// Get the n-th entry of this tree (0 = first entry). You can also access
+// EntryByIndex gets the n-th entry of this tree (0 = first entry). You can also access
 // t.TreeEntries[index] directly.
 func (t *Tree) EntryByIndex(index int) *TreeEntry {
 	if index >= len(t.TreeEntries) {
@@ -114,7 +114,7 @@ func (t *Tree) EntryByIndex(index int) *TreeEntry {
 	return t.TreeEntries[index]
 }
 
-// Get the number of entries in the directory (tree). Same as
+// EntryCount gets the number of entries in the directory (tree). Same as
 // len(t.TreeEntries).
 func (t *Tree) EntryCount() int {
 	return len(t.TreeEntries)

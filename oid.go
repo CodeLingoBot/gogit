@@ -45,7 +45,7 @@ func NewOidFromArray(a SHA1) *Oid {
 	return &Oid{a}
 }
 
-// Return string (hex) representation of the Oid
+// String returns string (hex) representation of the Oid
 func (o *Oid) String() string {
 	return hex.EncodeToString(o.Bytes[:])
 }

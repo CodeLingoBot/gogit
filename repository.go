@@ -544,7 +544,7 @@ func OpenRepository(path string) (*Repository, error) {
 	return root, nil
 }
 
-// Get the type of an object.
+// Type gets the type of an object.
 func (repos *Repository) Type(oid *Oid) (ObjectType, error) {
 	objtype, _, _, err := repos.getRawObject(oid)
 	if err != nil {
@@ -553,7 +553,7 @@ func (repos *Repository) Type(oid *Oid) (ObjectType, error) {
 	return objtype, nil
 }
 
-// Get (inflated) size of an object.
+// ObjectSize gets (inflated) size of an object.
 func (repos *Repository) ObjectSize(oid *Oid) (int64, error) {
 
 	// todo: this is mostly the same as getRawObject -> merge
